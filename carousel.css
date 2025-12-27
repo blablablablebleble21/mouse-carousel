@@ -2,7 +2,7 @@
     --bg-color: rgba(25, 25, 25, 0.85);
     --accent-color: purple;
     --ring-size: 250px;
-    --center-size: 70px;
+    --center-size: 60px;
 }
 
 * { box-sizing: border-box; }
@@ -12,7 +12,7 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Fixes the axis bar problem */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@ body {
 
 .ring-sector:hover {
     background: var(--accent-color);
-    padding-right: 45px;
+    padding-right: 37px;
 }
 
 .icon {
