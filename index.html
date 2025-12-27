@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actions Ring</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+    <div class="ring-wrapper">
+        <div class="center-dot"></div>
+        
+        <div class="ring-sector" style="--i:0;" onclick="sendAction('copy')">
+            <i class="bi bi-content-copy icon"></i>
+        </div>
+        <div class="ring-sector" style="--i:1;" onclick="sendAction('paste')">
+            <i class="bi bi-clipboard icon"></i>
+        </div>
+        <div class="ring-sector" style="--i:2;" onclick="sendAction('search')">
+            <i class="bi bi-search icon"></i>
+        </div>
+        <div class="ring-sector" style="--i:3;" onclick="sendAction('volume-up')">
+            <i class="bi bi-volume-up icon"></i>
+        </div>
+        <div class="ring-sector" style="--i:4;" onclick="sendAction('brightness-high')">
+            <i class="bi bi-brightness-high icon"></i>
+        </div>
+        <div class="ring-sector" style="--i:5;" onclick="sendAction('gear')">
+            <i class="bi bi-gear icon"></i>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function sendAction(action) {
+            console.log("Action triggered:", action);
+            // Sends the action name to main.js
+            ipcRenderer.send('execute-action', action);
+        }
+    </script>
+</body>
+</html>

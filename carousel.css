@@ -1,0 +1,79 @@
+:root {
+    --bg-color: rgba(25, 25, 25, 0.85);
+    --accent-color: purple;
+    --ring-size: 250px;
+    --center-size: 70px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Fixes the axis bar problem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+}
+
+.ring-wrapper {
+    position: relative;
+    width: var(--ring-size);
+    height: var(--ring-size);
+    animation: scaleIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.center-dot {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--center-size);
+    height: var(--center-size);
+    background: #111;
+    border-radius: 50%;
+    z-index: 10;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.ring-sector {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 100% 20%, 100% 80%);
+    background: var(--bg-color);
+    backdrop-filter: blur(15px);
+    transform: rotate(calc(var(--i) * 60deg));
+    transition: all 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.ring-sector:hover {
+    background: var(--accent-color);
+    padding-right: 45px;
+}
+
+.icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    transform: rotate(calc(var(--i) * -60deg)); /* Counter-rotation */
+    transition: transform 0.2s ease;
+}
+
+.ring-sector:hover .icon {
+    color: black;
+    transform: rotate(calc(var(--i) * -60deg)) scale(1.3);
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
