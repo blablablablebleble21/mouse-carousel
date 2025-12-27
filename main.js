@@ -1,4 +1,5 @@
 const { app, BrowserWindow, screen, globalShortcut, ipcMain } = require('electron');
+const { exec } = require('child_process');
 
 let win;
 
@@ -22,10 +23,15 @@ function createWindow() {
     win.setMenuBarVisibility(false);
 }
 
+function screenshot() {
+    win.hide();
+    exec('explorer ms-screenclip:');
+}
+
 app.whenReady().then(() => {
     createWindow();
 
-    // Trigger for G502 X Button (Mapped to Shift+F12+H in G HUB)
+    // Trigger for ghost button (Mapped to Shift+F12+H in G HUB). Chnge the mapping here if needed.
     globalShortcut.register('Shift+F12+H', () => {
         if (win.isVisible()) {
             win.hide();
@@ -40,9 +46,12 @@ app.whenReady().then(() => {
 // Listen for clicks from the carousel
 ipcMain.on('execute-action', (event, action) => {
     console.log("Executing:", action);
-    // Add logic here to control Windows
+    if (action === 'screenshot') {
+        screenshot();
+    }
     win.hide(); // Hide after selection
 });
+
 
 app.on('will-quit', () => {
     globalShortcut.unregisterAll();
