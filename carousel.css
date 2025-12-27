@@ -2,7 +2,7 @@
     --bg-color: rgba(25, 25, 25, 0.85);
     --accent-color: purple;
     --ring-size: 250px;
-    --center-size: 70px;
+    --center-size: 60px;
 }
 
 * { box-sizing: border-box; }
