@@ -28,6 +28,11 @@ function screenshot() {
     exec('explorer ms-screenclip:');
 }
 
+function spotify() {
+    win.hide();
+    exec('start spotify:');
+}
+
 app.whenReady().then(() => {
     createWindow();
 
@@ -48,6 +53,9 @@ ipcMain.on('execute-action', (event, action) => {
     console.log("Executing:", action);
     if (action === 'screenshot') {
         screenshot();
+    }
+    else if (action === 'spotify') {
+        spotify();
     }
     win.hide(); // Hide after selection
 });
