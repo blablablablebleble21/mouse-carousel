@@ -13,6 +13,7 @@ function createWindow() {
         skipTaskbar: true,
         resizable: false,
         show: false,
+        focusable: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -54,7 +55,7 @@ app.whenReady().then(() => {
 });
 
 // Listen for clicks from the carousel
-ipcMain.on('execute-action', (action) => {
+ipcMain.on('execute-action', (event, action) => {
     console.log("Executing:", action);
     if (action === 'screenshot') {
         screenshot();
