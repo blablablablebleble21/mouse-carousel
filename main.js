@@ -33,6 +33,11 @@ function spotify() {
     exec('start spotify:');
 }
 
+function paste() {
+    win.hide();
+    exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^v\')"');
+}
+
 app.whenReady().then(() => {
     createWindow();
 
@@ -56,6 +61,9 @@ ipcMain.on('execute-action', (event, action) => {
     }
     else if (action === 'spotify') {
         spotify();
+    }
+    else if (action === 'paste') {
+        paste();
     }
     win.hide(); // Hide after selection
 });
