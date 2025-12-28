@@ -41,8 +41,8 @@ function paste() {
 app.whenReady().then(() => {
     createWindow();
 
-    // Trigger for ghost button (Mapped to Shift+F12+H in G HUB). Chnge the mapping here if needed.
-    globalShortcut.register('Shift+F12+H', () => {
+    // Trigger for ghost button (Mapped to ctrl + ; in G HUB). Chnge the mapping here if needed.
+    globalShortcut.register('CommandOrControl+;', () => {
         if (win.isVisible()) {
             win.hide();
         } else {

@@ -39,6 +39,17 @@
             // Sends the action name to main.js
             ipcRenderer.send('execute-action', action);
         }
+        window.addEventListener('mouseenter', () => {
+            // This requests that the mouse stay locked inside the element
+            document.body.requestPointerLock();
+        });
+
+        // If the user escapes the lock, hide the carousel (optional)
+        document.addEventListener('pointerlockchange', () => {
+            if (document.pointerLockElement !== document.body) {
+                // You could send an IPC message to main.js to hide the window here
+            }
+        });
     </script>
 </body>
 </html>

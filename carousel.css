@@ -19,6 +19,7 @@ body {
     background: transparent;
     font-family: 'Segoe UI', sans-serif;
     user-select: none;
+    cursor: none;
 }
 
 .ring-wrapper {
@@ -26,6 +27,8 @@ body {
     width: var(--ring-size);
     height: var(--ring-size);
     animation: scaleIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: all;
+    cursor: none;
 }
 
 .center-dot {
@@ -54,11 +57,13 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding-right: 30px;
+    cursor: none;
 }
 
 .ring-sector:hover {
     background: var(--accent-color);
     padding-right: 37px;
+    cursor: none;
 }
 
 .icon {
