@@ -38,6 +38,10 @@ function paste() {
     win.hide();
     exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^v\')"');
 }
+function copy() {   
+        win.hide();
+        exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^c\')"');
+}
 
 app.whenReady().then(() => {
     createWindow();
@@ -65,6 +69,9 @@ ipcMain.on('execute-action', (event, action) => {
     }
     else if (action === 'paste') {
         paste();
+    }
+    else if (action === 'copy') {
+        copy();
     }
     win.hide(); // Hide after selection
 });
