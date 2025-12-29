@@ -1,5 +1,6 @@
 const { app, BrowserWindow, screen, globalShortcut, ipcMain } = require('electron');
 const { exec } = require('child_process');
+const robot = require('robotjs');
 
 let win;
 
@@ -45,7 +46,8 @@ function spotify() {
  */
 function paste() {
     win.hide();
-    exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^v\')"');
+    //exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^v\')"');
+    robot.keyTap('v', 'control');
 }
 
 /**
@@ -53,7 +55,7 @@ function paste() {
  */
 function copy() {   
         win.hide();
-        exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^c\')"');
+        robot.keyTap('c', 'control');
 }
 
 /**
@@ -62,6 +64,14 @@ function copy() {
 function settings() {
     win.hide();
     exec('start ms-settings:');
+}
+
+/**
+ * Define actions for last window.
+ */
+last_window = () => {
+    win.hide();
+    robot.keyTap('tab', 'alt');
 }
 
 app.whenReady().then(() => {
@@ -96,6 +106,9 @@ ipcMain.on('execute-action', (event, action) => {
     }
     else if (action === 'gear') {
     settings();
+    }
+    else if (action === 'last-window') {
+        last_window();
     }
     win.hide(); // Hide after selection
 });
