@@ -60,7 +60,7 @@ app.whenReady().then(() => {
 
 // Listen for clicks from the carousel
 ipcMain.on('execute-action', (event, action) => {
-    console.log("Executing:", action);
+    //DEBUG console.log("Executing:", action);
     if (action === 'screenshot') {
         screenshot();
     }
