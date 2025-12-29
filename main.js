@@ -43,6 +43,11 @@ function copy() {
         exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^c\')"');
 }
 
+function settings() {
+    win.hide();
+    exec('start ms-settings:');
+}
+
 app.whenReady().then(() => {
     createWindow();
 
@@ -72,6 +77,9 @@ ipcMain.on('execute-action', (event, action) => {
     }
     else if (action === 'copy') {
         copy();
+    }
+    else if (action === 'gear') {
+    settings();
     }
     win.hide(); // Hide after selection
 });
