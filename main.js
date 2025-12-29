@@ -24,25 +24,41 @@ function createWindow() {
     win.setMenuBarVisibility(false);
 }
 
+/**
+ * Define actions for screenshot.
+ */
 function screenshot() {
     win.hide();
     exec('explorer ms-screenclip:');
 }
 
+/**
+ * Define actions for Spotify.
+ */
 function spotify() {
     win.hide();
     exec('start spotify:');
 }
 
+/**
+ * Define actions for paste.
+ */
 function paste() {
     win.hide();
     exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^v\')"');
 }
+
+/**
+ * Define actions for copy.
+ */
 function copy() {   
         win.hide();
         exec('powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys(\'^c\')"');
 }
 
+/**
+ * Define actions for settings.
+ */
 function settings() {
     win.hide();
     exec('start ms-settings:');
@@ -63,7 +79,7 @@ app.whenReady().then(() => {
     });
 });
 
-// Listen for clicks from the carousel
+// Listen for clicks from the carousel and execute corresponding actions.
 ipcMain.on('execute-action', (event, action) => {
     //DEBUG console.log("Executing:", action);
     if (action === 'screenshot') {
