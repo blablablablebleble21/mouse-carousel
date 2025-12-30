@@ -83,7 +83,7 @@ app.whenReady().then(() => {
             win.hide();
         } else {
             const { x, y } = screen.getCursorScreenPoint();
-            win.setPosition(x - 120, y - 120);
+            win.setPosition(x - 125, y - 125);
             win.show();
         }
     });
