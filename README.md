@@ -1,14 +1,21 @@
-Establishing your intent: You want a professional and aesthetically pleasing README.md file for your project, reflecting its recent transition from Electron (JavaScript) to C# (.NET 8/9).
 
-🟣 Mouse Carousel (Actions Ring)
-A high-performance, radial quick-action menu designed for power users and accessibility. Originally built with Electron, the project is now evolving into a native C# application to eliminate resource overhead and hardware notification glitches.
+# 🟣Mouse quick pannel carousel
 
-🚀 Key Features
-Radial Navigation: 6-sector interactive ring optimized for muscle memory.
+This carousel is for any mouse with a spare key button, or a combination of keboard presses(see below).
 
-Precision Cursor Lock: Confines the mouse within the ring upon activation to ensure 100% selection accuracy.
+# 🚀 Key Features
 
-Hardware Macro Ready: Optimized to be triggered via Logitech G502 X G-keys using the Control + ; hotkey.
+Radial Navigation: 6-sector interactive ring that includes:
+
+1. Setting opener.
+2. Spotify opener.
+3. Paste the lest copied item(s).
+4. Copy the marked item(s).
+5. Switch to last opened tab.
+6. Snapshot the screen.  
+  
+  
+Hardware Macro Ready: Optimized to be triggered via a set of keys (using the Control + ; hotkey by default).
 
 Invisible Interaction: The system cursor is hidden while the ring is active, focusing the user's attention entirely on the action slices.
 
