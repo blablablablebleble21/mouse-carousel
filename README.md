@@ -24,10 +24,14 @@ Smart Focus Hand-off: Automatically restores focus to the underlying application
 # 🛠 Developer Setup (JS Version)
 For those wanting to run the js code code:
 
-Install Node.js: Ensure you have the runtime installed.
+Install VS 2022 version here: https://aka.ms/vs/17/release/vs_community.exe
 
-Dependencies: Run npm install to get electron and robotjs.
+MAKE SURE YOU INSTALL THE "Desktop developement with C++"!
 
-Native Rebuild: Because RobotJS is a native module, you must run ./node_modules/.bin/electron-rebuild so it matches your Electron version.
+Run installation.bat.
 
-Start: Run npm start to initialize the listener.
+Run launch.vbs
+
+Try pressing "ctrl + ;" Did it work? Congradutations! the carousel is now yours! If not then try re-runnning the steps above.
+
+If you want the carousel to be opened from a mouse button then you need to configure that button in your mouse HUB. I will make a nicer app that controlls everything in the future, but this is for now :)
