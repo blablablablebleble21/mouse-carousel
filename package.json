@@ -4,18 +4,32 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rebuild": "electron-rebuild -f -w robotjs",
+    "dist": "npm run rebuild && electron-builder"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Mouse Carousel for G502 X",
   "devDependencies": {
     "@electron/rebuild": "^4.0.2",
-    "electron": "^39.2.7"
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "@tkomde/iohook": "^1.1.7",
     "robotjs": "^0.6.0"
+  },
+  "build": {
+    "appId": "com.user.mousecarousel",
+    "productName": "MouseCarousel",
+    "win": {
+      "target": "portable",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "asar": true
   }
 }
