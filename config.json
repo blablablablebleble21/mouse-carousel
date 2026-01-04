@@ -1,0 +1,86 @@
+{
+  "hotkey": "CommandOrControl+Alt+Space",
+  "settingsHotkey": "Shift+Alt+Space",
+  "theme": "dark",
+  "ringSize": 300,
+  "animationSpeed": 200,
+  "actions": [
+    {
+      "name": "Spotify",
+      "icon": "spotify",
+      "type": "exec",
+      "command": "start spotify:",
+      "enabled": true
+    },
+    {
+      "name": "Copy",
+      "icon": "clipboard",
+      "type": "keyboard",
+      "keys": [
+        "c",
+        "control"
+      ],
+      "enabled": true
+    },
+    {
+      "name": "Paste",
+      "icon": "clipboard-check",
+      "type": "keyboard",
+      "keys": [
+        "v",
+        "control"
+      ],
+      "enabled": true
+    },
+    {
+      "name": "Screenshot",
+      "icon": "crop",
+      "type": "exec",
+      "command": "explorer ms-screenclip:",
+      "enabled": true
+    },
+    {
+      "name": "Settings",
+      "icon": "gear",
+      "type": "exec",
+      "command": "start ms-settings:",
+      "enabled": true
+    },
+    {
+      "name": "Last Window",
+      "icon": "window-stack",
+      "type": "keyboard",
+      "keys": [
+        "tab",
+        "alt"
+      ],
+      "enabled": true
+    },
+    {
+      "name": "Cmd",
+      "icon": "terminal",
+      "type": "exec",
+      "enabled": true,
+      "command": "start cmd"
+    },
+    {
+      "name": "Run Command",
+      "icon": "window-stack",
+      "type": "keyboard",
+      "enabled": true,
+      "keys": [
+        "r",
+        "super"
+      ]
+    }
+  ],
+  "themes": {
+    "dark": {
+      "bgColor": "rgba(25, 25, 25, 0.9)",
+      "accentColor": "#9333ea",
+      "iconColor": "#9333ea",
+      "hoverIconColor": "#ffffff"
+    }
+  },
+  "maxActions": 12
+}
