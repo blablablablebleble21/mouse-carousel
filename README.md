@@ -1,5 +1,5 @@
 
-# 🟣Mouse quick pannel carousel
+# 🟣Mouse quick pannel carousel - Experimental with JS
 
 This carousel is for any mouse with a spare key button, or a combination of keboard presses(see below).
 
