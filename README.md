@@ -34,4 +34,4 @@ Run launch.vbs
 
 Try pressing "ctrl + ;" Did it work? Congradutations! the carousel is now yours! If not then try re-runnning the steps above.
 
-If you want the carousel to be opened from a mouse button then you need to configure that button in your mouse HUB. I will make a nicer app that controlls everything in the future, but this is for now :)
+If you want the carousel to be opened from a mouse button then you need to configure that button in your mouse HUB. REMEMBER: THIS IS PURELY EXPERIMENTAL TO SEE HOW DIFFICULT WOULD IT BE TO PRODUCE SUCH AN APP IN A LANGUAGE THAT ISN'T USUALLY USED FOR APPS. A nicer app with more customizable features will be released in the future, but this is for now :)
