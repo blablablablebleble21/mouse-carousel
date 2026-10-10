@@ -1,37 +1,26 @@
+# Mouse Carousel
 
-# 🟣Mouse quick pannel carousel
+A Windows background utility for any mouse button or keyboard macro. Press **Ctrl + Alt + J** (the default), and a six-action radial menu opens at the cursor.
 
-This carousel is for any mouse with a spare key button, or a combination of keboard presses(see below).
+The app runs continuously in the notification area instead of keeping a normal window open. It starts with Windows by default, keeps one process even if launched twice, and does not take focus from the active app when the ring appears. The pointer is locked to the ring while it is open; press **Esc** or click the center to close it. Copy and Paste therefore apply to the app that was active before opening the ring.
 
-# 🚀 Key Features
+## Actions
 
-Radial Navigation: 6-sector interactive ring that includes:
+1. Open Spotify
+2. Paste
+3. Copy
+4. Switch to the previous window
+5. Start Windows screen clipping
+6. Open Windows Settings
 
-1. Setting opener.
-2. Spotify opener.
-3. Paste the lest copied item(s).
-4. Copy the marked item(s).
-5. Switch to last opened tab.
-6. Snapshot the screen.  
-  
-  
-Hardware Macro Ready: Optimized to be triggered via a set of keys (using the Control + ; hotkey by default).
+## Install and run
 
-Invisible Interaction: The system cursor is hidden while the ring is active, focusing the user's attention entirely on the action slices.
+Run `installation.bat` to install dependencies. No Visual Studio or native-module build step is required.
 
-Smart Focus Hand-off: Automatically restores focus to the underlying application before executing simulated keystrokes like Copy or Paste.
+Run `launch.vbs` to start Mouse Carousel silently. A Mouse Carousel icon will appear in the system tray. Left-click it to open the ring; right-click it to toggle **Start with Windows** or quit the app.
 
-# 🛠 Developer Setup (JS Version)
-For those wanting to run the js code code:
+Map a spare mouse button in your mouse software to **Ctrl + Alt + J**. If the shortcut does not open the ring, another app has claimed it; pick a different mapping and update `HOTKEY` in `main.js`.
 
-Install VS 2022 version here: https://aka.ms/vs/17/release/vs_community.exe
+## Development
 
-MAKE SURE YOU INSTALL THE "Desktop developement with C++"!
-
-Run installation.bat.
-
-Run launch.vbs
-
-Try pressing "ctrl + ;" Did it work? Congradutations! the carousel is now yours! If not then try re-runnning the steps above.
-
-If you want the carousel to be opened from a mouse button then you need to configure that button in your mouse HUB. I will make a nicer app that controlls everything in the future, but this is for now :)
+Run `npm start` from this folder. The development process is also background-resident and can be stopped through the tray menu. Build the portable Windows app with `npm run dist`.

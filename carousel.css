@@ -26,9 +26,12 @@ body {
     position: relative;
     width: var(--ring-size);
     height: var(--ring-size);
-    animation: scaleIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     pointer-events: all;
     cursor: none;
+}
+
+.ring-wrapper.is-visible {
+    animation: scaleIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .center-dot {
@@ -41,6 +44,8 @@ body {
     border-radius: 50%;
     z-index: 10;
     border: 2px solid rgba(255,255,255,0.1);
+    padding: 0;
+    cursor: none;
 }
 
 .ring-sector {
@@ -58,6 +63,8 @@ body {
     align-items: center;
     padding-right: 30px;
     cursor: none;
+    border: 0;
+    font: inherit;
 }
 
 .ring-sector:hover {
@@ -68,6 +75,7 @@ body {
 
 .icon {
     font-size: 1.8rem;
+    line-height: 1;
     color: var(--accent-color);
     transform: rotate(calc(var(--i) * -60deg)); /* Counter-rotation */
     transition: transform 0.2s ease;
